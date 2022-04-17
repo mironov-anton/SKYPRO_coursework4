@@ -3,6 +3,7 @@ from typing import Dict
 from flask import Flask, render_template, request, redirect, url_for
 
 from game.character_classes import character_classes
+from game.controller import Game
 from game.equipment import EquipmentData
 from game.hero import Hero, Player, Enemy
 from game.utils import load_equipment
@@ -13,6 +14,8 @@ app.url_map.strict_slashes = False
 heroes: Dict[str, Hero] = dict()
 
 EQUIPMENT: EquipmentData = load_equipment()
+
+game = Game()
 
 
 def render_choose_character_template(*args, **kwargs) -> str:
@@ -62,8 +65,10 @@ def choose_enemy():
 @app.route('/fight')
 def start_fight():
     if 'player' in heroes and 'enemy' in heroes:
+        game.run(**heroes)
         return render_template('fight.html', heroes=heroes, results='Fight!')
     return redirect(url_for('index'))
+
 
 if __name__ == '__main__':
     app.run()
