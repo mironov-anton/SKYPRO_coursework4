@@ -18,8 +18,8 @@
             <hr>
             <p><em>Информация:</em></p>
             <hr>
-            <p>Очки здоровья: {{ heroes.player.health_points }}/{{ heroes.player.class_.max_health }}</br> Очки выносливости:
-              {{ heroes.player.stamina_points }}/{{ heroes.player.class_.max_stamina }}</p>
+            <p>Очки здоровья: {{ heroes.player.hp }}/{{ heroes.player.class_.max_health }}</br> Очки выносливости:
+              {{ heroes.player.stamina }}/{{ heroes.player.class_.max_stamina }}</p>
           </div>
           <div class="col align-self-center">
             <button type="button" onclick="window.location.href='/fight/hit'" class="btn btn-success m-2">Нанести удар</button></br>
@@ -36,8 +36,8 @@
             <hr>
             <p><em>Информация:</em></p>
             <hr>
-            <p>Очки здоровья: {{ heroes.enemy.health_points }}/{{ heroes.enemy.class_.max_health }}</br> Очки выносливости:
-              {{ heroes.enemy.stamina_points }}/{{ heroes.enemy.class_.max_stamina }}</p>
+            <p>Очки здоровья: {{ heroes.enemy.hp }}/{{ heroes.enemy.class_.max_health }}</br> Очки выносливости:
+              {{ heroes.enemy.stamina }}/{{ heroes.enemy.class_.max_stamina }}</p>
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@
         <hr>
         <div class="row">
           <div class="col align-content-center">
-            <p><em>{{ result }}</em></p>
+            <p><em>{{ result | safe }}</em></p>
             <p>{{ battle_result }}</p>
           </div>
         </div>
