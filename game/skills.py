@@ -4,8 +4,8 @@ from dataclasses import dataclass
 @dataclass
 class Skill:
     name: str
-    damage: int
-    stamina: int
+    damage: float
+    stamina: float
 
 
 ferocious_kick = Skill(name="Свирепый пинок", damage=12, stamina=6)

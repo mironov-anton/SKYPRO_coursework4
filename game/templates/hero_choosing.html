@@ -11,34 +11,34 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <main style ="width: 320px; margin: 0 auto;">
       <div class="container">
-        <h2>{{ result.header }}</h2>
+        <h2>{{ header }}</h2>
       <form action="", method="post">
         <div class="form-group">
             <input type="text", name="name" class="form-control" placeholder="Имя героя">
           <hr>
           <select class="custom-select" name="unit_class" required>
              <option value="">Выберите класс</option>
-              {% for class in result.classes %}
-                  <option value="{{ class }}">{{ class }}</option>
+              {% for class in classes %}
+                  <option value="{{ class.name }}">{{ class.name }}</option>
               {% endfor %}
            </select>
           <hr>
             <select class="custom-select" name="weapon" required>
              <option value="">Выберите оружие</option>
-              {% for weapon_name in result.weapons %}
-                  <option value="{{ weapon_name }}">{{ weapon_name }}</option>
+              {% for weapon in equipment.weapons %}
+                  <option value="{{ weapon.name }}">{{ weapon.name }}</option>
               {% endfor %}
            </select>
           <hr>
           <select class="custom-select" name="armor" required>
              <option value="">Выберите броню</option>
-              {% for armor_name in result.armors %}
-                  <option value="{{ armor_name }}">{{ armor_name }}</option>
+              {% for armor in equipment.armors %}
+                  <option value="{{ armor.name }}">{{ armor.name }}</option>
               {% endfor %}
            </select>
           <hr>
           </div>
-        <button class="btn btn-success" type="submit">Выбрать героя</button>
+        <button class="btn btn-success" type="submit">{{ next_buton }}</button>
        </form>
       </div>
     </main>
