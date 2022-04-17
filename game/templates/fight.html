@@ -10,7 +10,7 @@
       <div class="container">
         <div class="row align-text-top">
           <div class="col align-self-start">
-            <h2>{{ heroes.player.name }}</br>класс: <em>{{ heroes.player.unit_class.name }}</em></h2>
+            <h2>{{ heroes.player.name }}</br>класс: <em>{{ heroes.player.class_.name }}</em></h2>
             <p><em>Экипировка:</em></p>
             <hr>
             <p>Оружие: {{ heroes.player.weapon.name }}, урон: {{ heroes.player.weapon.min_damage }} - {{ heroes.player.weapon.max_damage }}</br> Броня:
@@ -18,8 +18,8 @@
             <hr>
             <p><em>Информация:</em></p>
             <hr>
-            <p>Очки здоровья: {{ heroes.player.health_points }}/{{ heroes.player.unit_class.max_health }}</br> Очки выносливости:
-              {{ heroes.player.stamina_points }}/{{ heroes.player.unit_class.max_stamina }}</p>
+            <p>Очки здоровья: {{ heroes.player.health_points }}/{{ heroes.player.class_.max_health }}</br> Очки выносливости:
+              {{ heroes.player.stamina_points }}/{{ heroes.player.class_.max_stamina }}</p>
           </div>
           <div class="col align-self-center">
             <button type="button" onclick="window.location.href='/fight/hit'" class="btn btn-success m-2">Нанести удар</button></br>
@@ -28,7 +28,7 @@
             <button type="button" onclick="window.location.href='/fight/end-fight'" class="btn btn-secondary m-2">Завершить бой</button>
           </div>
           <div class="col align-self-start">
-            <h2>{{ heroes.enemy.name }}</br>класс: <em>{{ heroes.enemy.unit_class.name }}</em></h2>
+            <h2>{{ heroes.enemy.name }}</br>класс: <em>{{ heroes.enemy.class_.name }}</em></h2>
             <p><em>Экипировка:</em></p>
             <hr>
             <p>Оружие: {{ heroes.enemy.weapon.name }}, урон: {{ heroes.enemy.weapon.min_damage }} - {{ heroes.enemy.weapon.max_damage }}</br> Броня:
@@ -36,8 +36,8 @@
             <hr>
             <p><em>Информация:</em></p>
             <hr>
-            <p>Очки здоровья: {{ heroes.enemy.health_points }}/{{ heroes.enemy.unit_class.max_health }}</br> Очки выносливости:
-              {{ heroes.enemy.stamina_points }}/{{ heroes.enemy.unit_class.max_stamina }}</p>
+            <p>Очки здоровья: {{ heroes.enemy.health_points }}/{{ heroes.enemy.class_.max_health }}</br> Очки выносливости:
+              {{ heroes.enemy.stamina_points }}/{{ heroes.enemy.class_.max_stamina }}</p>
           </div>
         </div>
       </div>
